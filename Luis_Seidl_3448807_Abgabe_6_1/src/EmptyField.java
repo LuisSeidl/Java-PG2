@@ -10,9 +10,5 @@ public class EmptyField extends Field{
 		this.symbol = symbol;
 	}
 	
-	//overriding FieldObject
-	public void hamster_on() {
-		
-	}
 
 }

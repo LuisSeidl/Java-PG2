@@ -1,29 +1,17 @@
 
+
 public class HamsterGame {
 
 	public static void main(String[] args) {
 		Field field = new Field();
 		Hamster hamster = new Hamster();
-		Wall wall = new Wall();
-		Corn corn = new Corn();
-		EmptyField empty = new EmptyField();
 		
-		
-		field.generateField(17, 10);
+		field.getFieldsize();
+		field.generateField();
+		hamster.movement.setCoordinates(field.height,field.width);
+		field.addHamstertoField(hamster);
 		field.printfield();
 		
-		
-		char matrix[][] = { {'#','#','#','#','#','#','#','#','#','#','#'},
-							{'#',' ',' ','*',' ','#','#','#',' ','*','#'},
-							{'#',' ','#',' ','*','#','*',' ',' ',' ','#'},
-							{'#',' ','#','#',' ','*','*','#','#',' ','#'},
-							{'#',' ','*',' ','#',' ','*',' ','#','*','#'},
-							{'#','#',' ','*','#','#',' ',' ',' ',' ','#'},
-							{'#',' ','*','#',' ',' ','*','#','#',' ','#'},
-							{'#','#','#','#','#','#','#','#','#','#','#'}};
-			
-		
-
 	}
 
 }
