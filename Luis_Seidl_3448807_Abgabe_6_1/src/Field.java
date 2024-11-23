@@ -10,13 +10,30 @@ public class Field {
 
 	private char[][] field;
 	
+	
+	
+	public char[][] getField() {
+		return field;
+	}
+
+
+
+
+	public void setField(char[][] field) {
+		this.field = field;
+	}
+
+
+
 	public void getFieldsize() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Please enter the width of the field");
 		this.width = sc.nextInt();
 		System.out.println("Please enter the height of the field");
 		this.height = sc.nextInt();
-		sc.close();
+		/* here you should close the scanner but if i do that it not only closes this scanner but
+		 * closes my whole System.in input stream as well, so if i close it, the scanner i use during the game to
+		 * get the movement for the player will throw me a "java.util.NoSuchElementException' error  */
 	}
 	
 	
@@ -26,6 +43,7 @@ public class Field {
 		Random rand = new Random();
 		return rand.nextInt(3)+0;
 	}
+	
 	
 	
 	
@@ -51,12 +69,16 @@ public class Field {
 	}
 	
 	
+	
+	
 	public void addHamstertoField(Hamster hamster) {
-		this.field[hamster.movement.getY_coordinate()][hamster.movement.getX_coordinate()] = hamster.symbol;
+		this.field[hamster.movement.getY_coordinate()][hamster.movement.getX_coordinate()] = hamster.direction;
 	}
 	
 	
-	public void printfield() {
+	
+	
+	public void printField() {
 		for (int i =0; i< field.length; i++) {
 			for(int j = 0; j< field[0].length; j++) {
 				System.out.print(field[i][j]);
@@ -64,4 +86,11 @@ public class Field {
 			System.out.println("");
 		}
 	}
+	
+	
+	
+	public void deleteHamsterFromField(Hamster hamster) {
+		this.field[hamster.movement.getY_coordinate()][hamster.movement.getX_coordinate()] = ' ';
+	}
 }
+
