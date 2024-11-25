@@ -104,9 +104,9 @@ public class Hamster{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Choose one of the following Functions for the Hamster: \n1. Turn Left \n2. Turn Right \n3. Move Forward \n4. Output the amount of Corn the Hamster has eaten\n5. Stop the Game");
 		int decision = sc.nextInt();
-		/* here you should close the scanner but if i do that it not only closes this scanner but
-		 * closes my whole System.in input stream as well, so if i close it, the scanner i use during the game to
-		 * get the movement for the player will throw me a "java.util.NoSuchElementException' error  */
+		/* here you should close the scanner but if i do that it not only closes this scanner but closes my whole System.in input stream as well, so if i close it now, the next time i want to 
+		 * get the movement for the hamster it will throw me a "java.util.NoSuchElementException' error. This is why in the switch case 5, when we decide to stop playing the Game i close the Scanner,
+		 * because there is no input needed afterwards. this also closes the Scanner in the Field class, because it closes the whole input Stream (according to Stackoverflow)  */
 		
 		switch(decision) {
 		case 1: this.turnLeft();
@@ -126,6 +126,7 @@ public class Hamster{
 			break;
 		case 5: game = false;
 			System.out.println("\n \n Thanks for Playing! \n");
+			sc.close();
 			return game;
 		default:
 			System.out.println("Please enter a valid input");
