@@ -7,9 +7,8 @@ public class Field {
 	
 	int width = 0;
 	int height = 0;
-
-	private char[][] field;
 	
+	private char[][] field;
 	
 	
 	public char[][] getField() {
@@ -17,14 +16,11 @@ public class Field {
 	}
 
 
-
-
 	public void setField(char[][] field) {
 		this.field = field;
 	}
 
-
-
+	
 	public void getFieldsize() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Please enter the width of the field");
@@ -37,14 +33,10 @@ public class Field {
 	}
 	
 	
-	
-	
 	public int getRandomIndex() {
 		Random rand = new Random();
 		return rand.nextInt(3)+0;
 	}
-	
-	
 	
 	
 	public char[][] generateField() {
@@ -69,13 +61,9 @@ public class Field {
 	}
 	
 	
-	
-	
 	public void addHamstertoField(Hamster hamster) {
 		this.field[hamster.movement.getY_coordinate()][hamster.movement.getX_coordinate()] = hamster.direction;
 	}
-	
-	
 	
 	
 	public void printField() {
@@ -88,9 +76,10 @@ public class Field {
 	}
 	
 	
-	
 	public void deleteHamsterFromField(Hamster hamster) {
 		this.field[hamster.movement.getY_coordinate()][hamster.movement.getX_coordinate()] = ' ';
 	}
+	
+	
 }
 

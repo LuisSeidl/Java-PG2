@@ -6,8 +6,6 @@ public class Hamster{
 	HamsterMovement movement = new HamsterMovement();
 
 	
-	
-	
 	public void turnRight() {
 		switch(direction) {
 		case '^':
@@ -26,8 +24,6 @@ public class Hamster{
 	}
 	
 	
-	
-	
 	public void turnLeft() {
 		switch(direction) {
 		case '^':
@@ -44,8 +40,6 @@ public class Hamster{
 			break;
 		}
 	}
-	
-	
 	
 	
 	public void moveForward(char[][] checkfield) {
@@ -98,9 +92,7 @@ public class Hamster{
 	}
 	
 	
-	
-	
-	public Boolean getFunktion(Field field,char[][] checkfield, Boolean game) {
+	public Boolean getFunction(Field field,char[][] checkfield, Boolean game) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Choose one of the following Functions for the Hamster: \n1. Turn Left \n2. Turn Right \n3. Move Forward \n4. Output the amount of Corn the Hamster has eaten\n5. Stop the Game");
 		int decision = sc.nextInt();
@@ -126,14 +118,14 @@ public class Hamster{
 			break;
 		case 5: game = false;
 			System.out.println("\n \n Thanks for Playing! \n");
-			sc.close();
+			sc.close(); // closing the scanner here 
 			return game;
 		default:
 			System.out.println("Please enter a valid input");
 			return game;
 		
 		}
-		return game;
+		return game; //can't really do anything to fix this message, because if i would close it here the game wouldn't work
 	}
 	
 	
